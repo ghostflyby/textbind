@@ -34,4 +34,6 @@
  * For more details, see https://docs.gradle.org/8.0.1/userguide/java_library_plugin.html#sec:java_library_configurations_graph
  */
 dependencies {
+    api('io.github.legacymoddingmc:unimixins:0.1.7.1:dev')
+    api("com.github.GTNewHorizons:Forgelin:1.9.7-GTNH")
 }
