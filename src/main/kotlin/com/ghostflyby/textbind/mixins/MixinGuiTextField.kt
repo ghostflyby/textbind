@@ -31,7 +31,6 @@ abstract class MixinGuiTextField(@Shadow private var isFocused: Boolean) : Gui()
     }
 
     val keyCombination = KeyCombination.current().withKey(Key[keyCode] ?: return false)
-    //    keyCombination.apply { if (key == null) withKey(Key[keyCode] ?: return false) }
 
     if (GuiTextFieldActions[keyCombination]?.invoke(textField) == true) return true
 

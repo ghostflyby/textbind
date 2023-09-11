@@ -12,6 +12,15 @@ import org.spongepowered.asm.mixin.injection.Inject
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo
 
 @Mixin(GuiScreen::class)
+/**
+ * GuiScreen only sends PRESS events to the keyTyped method, key RELEASE events are ignored.
+ *
+ * However, shortcuts like `CMD + C` and `CTRL + OPTION + C` only fire the RELEASE of the C key, so
+ * we need to intercept the key RELEASE event for such shortcuts.
+ * @author ghostflyby
+ * @see Keyboard.getEventKeyState
+ * @see GuiScreen.handleKeyboardInput
+ */
 abstract class MixinGuiScreen(@Shadow private var mc: Minecraft) : Gui() {
 
   @Shadow abstract fun keyTyped(typedChar: Char, keyCode: Int)

@@ -137,6 +137,12 @@ enum class Key(val value: Int) {
 
   companion object {
     private val map = values().associateBy(Key::value)
+
+    /**
+     * Get the enum with the given value
+     * @param value: A Int representing a Key in org.lwjgl.input.Keyboard
+     * @see org.lwjgl.input.Keyboard
+     */
     operator fun get(value: Int) = map[value]
   }
 
