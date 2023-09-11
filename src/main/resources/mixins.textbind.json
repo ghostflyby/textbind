@@ -1,0 +1,13 @@
+{
+  "required": true,
+  "minVersion": "0.8.5-GTNH",
+  "package": "com.ghostflyby.textbind.mixins",
+  "refmap": "mixins.textbind.refmap.json",
+  "target": "@env(DEFAULT)",
+  "compatibilityLevel": "JAVA_8",
+  "mixins": [],
+  "client": ["MixinGuiTextField",
+    "MixinGuiScreen"
+  ],
+  "server": []
+}
