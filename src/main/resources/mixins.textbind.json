@@ -6,8 +6,8 @@
   "target": "@env(DEFAULT)",
   "compatibilityLevel": "JAVA_8",
   "mixins": [],
-  "client": ["MixinGuiTextField",
-    "MixinGuiScreen"
+  "client": [
+    "MixinGuiTextField"
   ],
   "server": []
 }
