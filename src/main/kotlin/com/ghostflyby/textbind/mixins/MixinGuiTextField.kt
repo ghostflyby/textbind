@@ -24,13 +24,15 @@ abstract class MixinGuiTextField(@Shadow private var isFocused: Boolean) : Gui()
    */
   fun textboxKeyTyped(typedChar: Char, keyCode: Int): Boolean {
     @Suppress("CAST_NEVER_SUCCEEDS") val textField = this as GuiTextField
-    TextBind.logger.info("[TextField] Char: ${typedChar}, KeyCode: ${Keyboard.getKeyName(keyCode)}")
+    TextBind.logger.debug(
+        "[TextField] Char: ${typedChar}, KeyCode: ${Keyboard.getKeyName(keyCode)}")
 
     if (!isFocused) {
       return false
     }
 
     val keyCombination = KeyCombination.current().withKey(Key[keyCode] ?: return false)
+    TextBind.logger.debug("[TextField] KeyCombination: {}", keyCombination)
 
     if (GuiTextFieldActions[keyCombination]?.invoke(textField) == true) return true
 
