@@ -1,5 +1,6 @@
 package com.ghostflyby.textbind.keyboard
 
+import java.util.*
 import net.minecraft.client.Minecraft
 import org.lwjgl.input.Keyboard
 
