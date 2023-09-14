@@ -23,7 +23,7 @@ abstract class MixinGuiTextField(@Shadow private var isFocused: Boolean) : Gui()
    * @reason Changing and rebinding the shortcuts in GuiTextField TODO: Add support for configurable
    * shortcuts
    */
-  fun textboxKeyTyped(typedChar: Char, keyCode: Int): Boolean {
+  open fun textboxKeyTyped(typedChar: Char, keyCode: Int): Boolean {
     @Suppress("CAST_NEVER_SUCCEEDS") val textField = this as GuiTextField
     TextBind.logger.debug(
         "[TextField] Char: ${typedChar}, KeyCode: ${Keyboard.getKeyName(keyCode)}")
