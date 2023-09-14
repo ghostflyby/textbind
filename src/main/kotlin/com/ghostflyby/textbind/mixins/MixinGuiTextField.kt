@@ -12,6 +12,7 @@ import org.spongepowered.asm.mixin.Mixin
 import org.spongepowered.asm.mixin.Overwrite
 import org.spongepowered.asm.mixin.Shadow
 
+@Suppress("NonJavaMixin")
 @Mixin(GuiTextField::class)
 @SuppressWarnings("UnresolvedMixinReference")
 abstract class MixinGuiTextField(@Shadow private var isFocused: Boolean) : Gui() {

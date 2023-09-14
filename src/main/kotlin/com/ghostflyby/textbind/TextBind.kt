@@ -11,7 +11,7 @@ import org.apache.logging.log4j.Logger
     version = Tags.VERSION,
     name = Tags.MODNAME,
     acceptedMinecraftVersions = "[1.7.10]")
-public class TextBind {
+class TextBind {
   companion object {
     val logger: Logger = LogManager.getLogger(Tags.MODID)
   }

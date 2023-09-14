@@ -1,11 +1,8 @@
 package com.ghostflyby.textbind.actions
 
 import com.ghostflyby.textbind.keyboard.Key.*
-import com.ghostflyby.textbind.keyboard.KeyCombination as KC
 import net.minecraft.client.gui.GuiScreen
 import net.minecraft.client.gui.GuiTextField
-
-fun keys(vararg keys: KC?) = keys.filterNotNull().toTypedArray()
 
 enum class GuiTextFieldActions(val action: Action<GuiTextField>) {
   ESC({
