@@ -21,7 +21,7 @@ sealed class ActionCompanion<E : Enum<*>, ActionParam>(
   fun loadConfig() {
     val (exist, file) = Config["$configGroup.json"]
     val type = object : TypeToken<LinkedHashMap<String, Array<KeyCombination>>>() {}.type
-    var map: Map<String, Array<KeyCombination>>;
+    var map: Map<String, Array<KeyCombination>>
 
     if (exist) file.reader().use { reader -> map = gson.fromJson(reader, type) }
     else {
