@@ -42,8 +42,12 @@ enum class GuiTextFieldActions(val action: Action<GuiTextField>) {
     true
   }),
   CUT({
-    GuiScreen.setClipboardString(it.selectedText.ifEmpty { it.text })
-    it.writeText("")
+    GuiScreen.setClipboardString(
+        it.selectedText.ifEmpty {
+          com.ghostflyby.textbind.actions.GuiTextFieldActions.SELECT_ALL.action.invoke(it)
+          it.text
+        })
+    it.text = ""
     true
   }),
   SELECT_ALL({
