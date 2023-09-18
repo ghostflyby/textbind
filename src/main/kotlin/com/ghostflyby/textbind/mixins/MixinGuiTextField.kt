@@ -36,6 +36,7 @@ abstract class MixinGuiTextField(@Shadow private var isFocused: Boolean) : Gui()
     TextBind.logger.debug("[TextField] KeyCombination: {}", keyCombination)
 
     if (GuiTextFieldActions[keyCombination]?.invoke(textField) == true) return true
+    else if (keyCombination.controlDown || keyCombination.metaDown) return false
 
     return if (ChatAllowedCharacters.isAllowedCharacter(typedChar)) {
       textField.writeText(typedChar.toString())
