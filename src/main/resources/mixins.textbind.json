@@ -7,10 +7,12 @@
   "compatibilityLevel": "JAVA_8",
   "mixins": [],
   "client": [
+    "IGuiChat",
+    "ISearchField",
+    "MixinGuiChat",
     "MixinGuiTextField",
-    "MixinTextFieldEnder",
     "MixinSearchField",
-    "ISearchField"
+    "MixinTextFieldEnder"
   ],
   "server": []
 }

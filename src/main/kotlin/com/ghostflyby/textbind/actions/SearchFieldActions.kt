@@ -3,7 +3,7 @@ package com.ghostflyby.textbind.actions
 import codechicken.nei.SearchField
 import com.ghostflyby.textbind.keyboard.Key.*
 import com.ghostflyby.textbind.keyboard.KeyCombination
-import com.ghostflyby.textbind.mixins.accessor
+import com.ghostflyby.textbind.util.accessor
 
 enum class SearchFieldActions(val action: Action<SearchField>) {
   PREVIOUS({

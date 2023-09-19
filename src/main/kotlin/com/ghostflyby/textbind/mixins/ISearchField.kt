@@ -11,6 +11,3 @@ interface ISearchField {
 
   @Invoker fun callHandleNavigateHistory(direction: TextHistory.Direction): Boolean
 }
-
-val SearchField.accessor: ISearchField
-  get() = this as ISearchField
