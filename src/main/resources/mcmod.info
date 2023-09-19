@@ -6,7 +6,7 @@
 		"description": "Mod for changing keybindings in textFields with mixin",
 		"version": "${modVersion}",
 		"mcversion": "${minecraftVersion}",
-		"url": "",
+		"url": "https://github.com/ghostflyby/textbind",
 		"updateUrl": "",
 		"authorList": ["ghostflyby"],
 		"credits": "",
