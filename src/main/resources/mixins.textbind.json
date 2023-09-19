@@ -10,7 +10,7 @@
     "MixinGuiTextField",
     "MixinTextFieldEnder",
     "MixinSearchField",
-    "IMixinSearchFieldAccessor"
+    "ISearchField"
   ],
   "server": []
 }

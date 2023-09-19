@@ -7,7 +7,10 @@ import org.spongepowered.asm.mixin.gen.Invoker
 
 @Mixin(SearchField::class, remap = false)
 @Suppress("NonJavaMixin")
-interface IMixinSearchFieldAccessor {
+interface ISearchField {
 
   @Invoker fun callHandleNavigateHistory(direction: TextHistory.Direction): Boolean
 }
+
+val SearchField.accessor: ISearchField
+  get() = this as ISearchField

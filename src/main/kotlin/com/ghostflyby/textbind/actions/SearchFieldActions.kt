@@ -3,20 +3,18 @@ package com.ghostflyby.textbind.actions
 import codechicken.nei.SearchField
 import com.ghostflyby.textbind.keyboard.Key.*
 import com.ghostflyby.textbind.keyboard.KeyCombination
-import com.ghostflyby.textbind.mixins.IMixinSearchFieldAccessor
+import com.ghostflyby.textbind.mixins.accessor
 
 enum class SearchFieldActions(val action: Action<SearchField>) {
   PREVIOUS({
     if (it.focused()) {
-      (it as IMixinSearchFieldAccessor).callHandleNavigateHistory(
-          codechicken.nei.util.TextHistory.Direction.PREVIOUS)
+      it.accessor.callHandleNavigateHistory(codechicken.nei.util.TextHistory.Direction.PREVIOUS)
       true
     } else false
   }),
   NEXT({
     if (it.focused()) {
-      (it as IMixinSearchFieldAccessor).callHandleNavigateHistory(
-          codechicken.nei.util.TextHistory.Direction.NEXT)
+      it.accessor.callHandleNavigateHistory(codechicken.nei.util.TextHistory.Direction.NEXT)
       true
     } else false
   }),
