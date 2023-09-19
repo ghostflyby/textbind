@@ -36,10 +36,7 @@ abstract class MixinTextFieldEnder {
     val keyCombination = KeyCombination.current().withKey(Key[keyCode] ?: return false)
     TextBind.logger.debug("[TextFieldEnder] KeyCombination: {}", keyCombination)
 
-    GuiTextFieldActions[keyCombination]?.let {
-      //      if (!isEnabled) return false
-      if (it.invoke(this)) return true
-    }
+    GuiTextFieldActions[keyCombination]?.let { if (it.invoke(this)) return true }
 
     return if (filter != null && filter.passesFilter(textFieldEnder, typedChar)) {
       textField.writeText(typedChar.toString())
