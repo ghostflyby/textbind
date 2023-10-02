@@ -11,11 +11,11 @@ import org.spongepowered.asm.mixin.Mixin
 import org.spongepowered.asm.mixin.Overwrite
 import org.spongepowered.asm.mixin.Shadow
 
-@Mixin(TextFieldEnder::class, remap = false)
+@Mixin(TextFieldEnder::class)
 @Suppress("NonJavaMixin")
 abstract class MixinTextFieldEnder {
 
-  @Shadow private val filter: TextFieldEnder.ICharFilter? = null
+  @Shadow(remap = false) private val filter: TextFieldEnder.ICharFilter? = null
 
   /**
    * @author ghostflyby
